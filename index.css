@@ -1,59 +1,64 @@
-body{
-    font-family: "Inter", sans-serif; /* Aqui agregue la fuente que va a tener todo el body*/
-    margin: 0%; /* aqui agregue para que no tenga espacio alrededor */
-}
-
-.navbar {
-    background-color: #143963; /* Color de fondo del navbar */ 
-    display: flex; /* Usar flexbox para el diseño */
-    padding: 14px 0; /* Espaciado arriba y abajo */
-    align-items: center; /* Alinear los elementos verticalmente al centro */
-    justify-content: space-between; /* Espacio entre los elementos */
-    height: 40px;
-    overflow: hidden;
-}
-
-.logo {
-    margin-left: 20px; /* Espacio a la izquierda del logo */
-    margin-right: 20px; /* Espacio a la derecha del logo */
-}
-
-.botones {
-    display: flex; /* Usar flexbox para los botones */
-    gap: 15px; /* Espacio entre los botones */
-    justify-content: right; /* Alinear los botones a la derecha */
-    margin-right: 20px; /* Espacio a la derecha del contenedor de botones */
-    white-space: nowrap; /* Evitar que los botones se envuelvan */
-}
-
-.botones_nav {
+.top{
+    padding: 35px 0 0 0; 
+    width: 100%;
+    height: 200px;
+    display: flex;
     
+}
+
+.top-texto{
+    padding-top: 5%;
+    padding-left: 10%;
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    width: 100%;
+}
+
+.boton_registro{
+    width: fit-content;
+    margin-top: 10px;
+    margin-left: 340px;
     text-decoration: none; /* Quitar subrayado */
-    display: flex; /* Para que tome el padding */
-    color: #3498db; 
-    font-weight: bold; /* Texto en negrita */
-    border: 2px solid #3498db;
-    background-color: transparent; /* Fondo transparente */
+    color: black; 
+    border: 2px ; 
     padding: 10px 20px; /* Espacio interno para que se vea la forma */
     border-radius: 50px; /* Hace los bordes curvos */
     transition: all 0.3s ease; /* Transición suave al cambiar */
+    cursor: pointer;
+    background-image: linear-gradient(180deg, #bffae1, #83DDB7);
+    font-weight: bold;
+    transition: opacity 0.3s;
 }
 
-.botones_nav:hover, .boton_register:hover {
+.boton_registro:hover {
     color: white;
     background-color: #3498db;
     border-color: #2980b9;
 }
 
-.boton_register {
-    text-decoration: none; /* Quitar subrayado */
-    color: black; 
-    font-weight: bold; /* Texto en negrita */
-    border: 2px solid #83DDB7; 
-    background-color: #83DDB7; 
-    padding: 10px 20px; /* Espacio interno para que se vea la forma */
-    border-radius: 50px; /* Hace los bordes curvos */
-    transition: all 0.3s ease; /* Transición suave al cambiar */
+.top-imagen{
+    padding-top: 5%;
+    padding-right: 10%;
+    justify-content: right;
+    display: flex;
+    width: 100%;
+    
 }
 
 
+.cartel{
+    padding: 0; /* Espacio arriba para el navbar */
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    min-height: calc(100vh - 40px);
+}
+
+.cartel-card {
+    width: 100%;
+    height: flex;
+    background-image: linear-gradient(180deg, #c9f5f1, #7fb9de);
+    box-shadow: 0 0px 60px rgba(0, 0, 0, 0.2);
+    display: flex;
+}
