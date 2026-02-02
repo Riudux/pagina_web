@@ -1,10 +1,12 @@
 .navbar {
     background-color: #143963; /* Color de fondo del navbar */ 
     display: flex; /* Usar flexbox para el diseño */
+    position: fixed; /* Fijar el navbar en la parte superior */
+    width: 100%; /* Ancho completo */
+    height: 35px;
     padding: 14px 0; /* Espaciado arriba y abajo */
     align-items: center; /* Alinear los elementos verticalmente al centro */
     justify-content: space-between; /* Espacio entre los elementos */
-    height: 100%;
     overflow: hidden;
 }
 
