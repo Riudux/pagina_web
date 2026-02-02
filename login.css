@@ -1,0 +1,161 @@
+/* =====================================================
+   NOTA IMPORTANTE (NO VISTO EN CLASE)
+   -----------------------------------------------------
+   Se usan dos propiedades que no se vieron en clase:
+
+   1) linear-gradient
+      Permite crear fondos con transiciones suaves
+      entre colores sin usar imágenes.
+
+   2) box-shadow
+      Permite agregar sombras para dar profundidad
+      visual a los elementos.
+
+   Estas propiedades NO son necesarias para que
+   el formulario funcione, solo mejoran el diseño.
+   ===================================================== */
+
+
+/* =========================
+   FONDO GENERAL LOGIN
+   ========================= */
+.login {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/* =========================
+   TARJETA LOGIN
+   ========================= */
+.login-card {
+    width: 850px;
+    height: 450px;
+
+    border-radius: 25px;
+
+    box-shadow: 0 15px 60px rgba(0, 0, 0, 0.2);
+
+    display: flex;
+}
+/* =========================
+   COLUMNA FORMULARIO
+   ========================= */
+.login-form {
+    width: 38%;
+    padding: 50px;
+}
+/* =========================
+   TÍTULO
+   ========================= */
+.login-form h2 {
+    color: #143963;
+    font-size: 24px;
+    font-weight: bold;
+
+    margin-bottom: 25px;
+}
+/* =========================
+   INPUTS
+   ========================= */
+.input-group {
+    margin-bottom: 15px;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 12px;
+
+    font-size: 14px;
+
+    border: 1px solid #8fbcd4;
+    border-radius: 25px;
+
+    background-color: white;
+}
+/* =========================
+   CHECKBOX
+   ========================= */
+.checkbox {
+    font-size: 14px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    color: rgb(69, 69, 69);
+}
+/* =========================
+   BOTÓN LOGIN
+   ========================= */
+.btn-login {
+    width: 100%;
+    padding: 12px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+
+    background-image: linear-gradient(90deg, #4fe3b1, #5b8cff);
+
+    color: white;
+    font-weight: bold;
+
+    border: none;
+    border-radius: 25px;
+
+    cursor: pointer;
+
+    transition: opacity 0.3s;
+}
+
+.btn-login:hover {
+    opacity: 0.85;
+}
+/* =========================
+   TEXTO INFERIOR
+   ========================= */
+.login-link {
+    font-size: 14px;
+    margin-top: 15px;
+}
+
+.login-link a {
+    color: #143963;
+    font-weight: bold;
+    text-decoration: none;
+}
+.login-link a:hover {
+    text-decoration: underline;
+}
+/* =========================
+   LINK OLVIDÉ CONTRASEÑA
+   ========================= */
+.forgot-password {
+    font-size: 13px;
+    display: flex;
+    color: #143963;
+    text-decoration: none;
+}
+
+.forgot-password:hover {
+    text-decoration: underline;
+}
+/* =========================
+   COLUMNA IMAGEN
+   ========================= */
+.login-image {
+    width: 50%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-image img {
+    width: 80%;
+}
+
+/* =========================
+   EVITAR FRANJA AZUL
+   ========================= */
+.login {
+    min-height: calc(100vh - 40px);
+}
+
+
+

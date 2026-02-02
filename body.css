@@ -1,0 +1,23 @@
+body{
+    font-family: "Inter", sans-serif; /* Aqui agregue la fuente que va a tener todo el body*/
+    margin: 0%; /* aqui agregue para que no tenga espacio alrededor */
+    padding: 0%; /* aqui agrege para que no tenga espacio interno alrededor */
+    background-image: linear-gradient(135deg, #e6fff8, #c7e9f5); /* aqui agrege un fondo degradado */
+    min-height: 100vh;      /* ocupa toda la pantalla */
+    flex-direction: column; /* navbar arriba, footer abajo */
+    display: flex;
+
+}
+
+footer {
+    background-color: #143963; /* Color de fondo del footer */
+    color: white; /* Color del texto del footer */
+    text-align: center; /* Centrar el texto */
+    padding: 10px 0; /* Espaciado arriba y abajo */
+    position: fixed; /* Fijar el footer en la parte inferior */
+    bottom: 0; /* Posición inferior */
+    width: 100%; /* Ancho completo */
+}
+footer p {
+    margin: 0; /* Quitar el margen por defecto */
+}
