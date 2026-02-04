@@ -14,10 +14,29 @@ footer {
     color: white; /* Color del texto del footer */
     text-align: center; /* Centrar el texto */
     padding: 10px 0; /* Espaciado arriba y abajo */
-    position: fixed; /* Fijar el footer en la parte inferior */
     bottom: 0; /* Posición inferior */
     width: 100%; /* Ancho completo */
+    display: flex;
 }
 footer p {
     margin: 0; /* Quitar el margen por defecto */
+}
+
+.foot_col_izq {
+    justify-content: left;
+}
+.foot_col_izq p {
+    text-align: left;
+    margin-left: 60px;
+    font-size: 20px;
+}
+
+#foot_col_izq_img {
+    height: 100px;
+    justify-content: left;
+    margin-top: 10px;
+}
+
+#foot_col_izq_iconos{
+    height: 1px;
 }
