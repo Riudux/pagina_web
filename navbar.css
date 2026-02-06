@@ -24,7 +24,6 @@
 }
 
 .botones_nav {
-    
     text-decoration: none; /* Quitar subrayado */
     display: flex; /* Para que tome el padding */
     color: #3498db; 

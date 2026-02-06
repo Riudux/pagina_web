@@ -12,7 +12,7 @@ body{
 footer {
     background-color: #143963; /* Color de fondo del footer */
     color: white; /* Color del texto del footer */
-    text-align: center; /* Centrar el texto */
+    justify-content: center; /* Centrar el contenido del footer */
     padding: 10px 0; /* Espaciado arriba y abajo */
     bottom: 0; /* Posición inferior */
     width: 100%; /* Ancho completo */
@@ -21,22 +21,85 @@ footer {
 footer p {
     margin: 0; /* Quitar el margen por defecto */
 }
+.foot_col_izq_iconos {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 30px;
+}
 
 .foot_col_izq {
     justify-content: left;
 }
 .foot_col_izq p {
     text-align: left;
-    margin-left: 60px;
+    margin-left: 30px;
+    margin-bottom: 5px;
     font-size: 20px;
 }
 
 #foot_col_izq_img {
-    height: 100px;
+    height: 80px;
     justify-content: left;
     margin-top: 10px;
+    margin-left: 30px;
 }
 
 #foot_col_izq_iconos{
     height: 1px;
+}
+
+.foot_col_centro_izq {
+    text-align: left;
+    margin-left: 20px;
+}
+
+#foot_col_centro_izq_h1 {
+    font-size: 30px;
+    margin-bottom: 10px;
+    margin-left: 23px;
+}
+.foot_col_centro_izq_enlaces {
+    text-decoration: none;
+    color: white;
+    font-size: 15px;
+}
+.foot_col_centro_izq_enlaces:hover {
+    text-decoration: underline;
+}
+
+.foot_col_centro_der {
+    text-align: left;
+    margin-left: 20px;
+}
+
+#foot_col_centro_der_h1 {
+    font-size: 30px;
+    margin-bottom: 10px;
+    margin-left: 23px;
+}
+
+.foot_col_centro_der_enlaces {
+    text-decoration: none;
+    color: white;
+    font-size: 15px;
+}
+.foot_col_centro_der_enlaces:hover {
+    text-decoration: underline;
+}
+
+.foot_col_der{
+    text-align: left;
+    margin-left: 20px;
+}
+
+#foot_col_der_h1 {
+    font-size: 30px;
+    margin-bottom: 10px;
+    margin-left: 23px;
+}
+
+.foot_col_der_contacto {
+    text-decoration: none;
+    color: white;
+    font-size: 15px;
 }
