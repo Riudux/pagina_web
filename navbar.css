@@ -3,13 +3,13 @@
     display: flex; /* Usar flexbox para el diseño */
     position: fixed; /* Fijar el navbar en la parte superior */
     width: 100%; /* Ancho completo */
-    height: 75px;
+    height: 75px; /* Altura del navbar */
     padding: 14px 0; /* Espaciado arriba y abajo */
     align-items: center; /* Alinear los elementos verticalmente al centro */
     justify-content: space-between; /* Espacio entre los elementos */
-    overflow: hidden;
+    overflow: hidden;/* Hace que los botones se escondan detras del logo */
     top: 0; /* Posición superior */
-    box-shadow: 0 10px 20px rgba(0,0,0,.08);
+    box-shadow: 0 10px 20px rgba(0,0,0,.08); /* Sombra debajo del navbar */
 }
 
 .logo {
