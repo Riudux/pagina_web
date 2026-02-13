@@ -1,0 +1,58 @@
+/* Variables de diseño */
+:root {
+    --azul-oscuro: #1a4a7a;
+    --azul-brillante: #4facfe;
+    --degradado-fondo: linear-gradient(135deg, #e0f7fa 0%, #b2ebf2 100%);
+    --blanco-cristal: rgba(255, 255, 255, 0.85);
+}
+
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: var(--degradado-fondo);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* Tarjeta principal */
+.card {
+    background: var(--blanco-cristal);
+    backdrop-filter: blur(10px);
+    border-radius: 25px;
+    padding: 40px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    max-width: 450px;
+    width: 90%;
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+h2 {
+    color: var(--azul-oscuro);
+    margin-bottom: 20px;
+}
+
+p {
+    color: #444;
+    line-height: 1.6;
+}
+
+/* Botón de acción */
+.btn {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 25px;
+    background: linear-gradient(to right, #4facfe, #00f2fe);
+    color: white;
+    text-decoration: none;
+    border-radius: 25px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 5px 15px rgba(79, 172, 254, 0.4);
+}
