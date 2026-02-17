@@ -1,112 +1,130 @@
-*{
+/* ==================================================
+   RESET GENERAL
+   ================================================== */
+
+/* 
+   Se eliminan márgenes y paddings por defecto del navegador
+   y se activa box-sizing border-box para que padding y border
+   no alteren el tamaño real de los elementos.
+*/
+* {
     box-sizing: border-box;
-    margin: 0; /* aqui agregue para que no tenga espacio alrededor */
-    padding: 0; /* aqui agrege para que no tenga espacio interno alrededor */
+    margin: 0;
+    padding: 0;
 }
+/* ==================================================
+   ESTILOS GENERALES DEL BODY
+   ================================================== */
 
-body{
-    font-family:'Inter', sans-serif;    
-    background-image: linear-gradient(135deg, #e6fff8, #c7e9f5); /* aqui agrege un fondo degradado */
-    min-height: 100vh;      /* ocupa toda la pantalla */
-    flex-direction: column; /* navbar arriba, footer abajo */
-    display: flex;
-    padding-top: 75px; /* para que el contenido no quede debajo del navbar */
-    box-shadow:0 4px 12px rgba(0,0,0,.08);
+body {
+    font-family: 'Inter', sans-serif; /* Tipografía principal */
+    background-image: linear-gradient(135deg, #e6fff8, #c7e9f5); /* Fondo degradado */
+    min-height: 100vh; /* Altura mínima igual a la pantalla */
+    display: flex; /* Flexbox para organizar layout vertical */
+    flex-direction: column; /* Navbar arriba, contenido centro, footer abajo */
 }
-
+/* ==================================================
+   FOOTER - CONTENEDOR PRINCIPAL
+   ================================================== */
 footer {
-    background-color: #143963; /* Color de fondo del footer */
-    color: white; /* Color del texto del footer */
-    justify-content: center; /* Centrar el contenido del footer */
-    padding: 10px 0; /* Espaciado arriba y abajo */
-    bottom: 0; /* Posición inferior */
-    width: 100%; /* Ancho completo */
-    display: flex;
-    margin-top:100px;
+    background-color: #143963; /* Color institucional */
+    color: white; /* Texto blanco */
+    display: flex; /* Organiza columnas en fila */
+    justify-content: space-around; /* Distribuye columnas uniformemente */
+    flex-wrap: wrap; /* Permite que bajen en pantallas pequeñas */
+    padding: 40px 20px; /* Espaciado interno */
+    margin-top: auto; /* Empuja el footer hacia abajo si hay poco contenido */
 }
 footer p {
-    margin: 0; /* Quitar el margen por defecto */
+    margin: 0; /* Elimina márgenes por defecto */
 }
-.foot_col_izq_iconos {
-    display: flex;
-    justify-content: space-between;
-    padding: 0 30px;
-}
-
-
+/* ==================================================
+   COLUMNA IZQUIERDA
+   ================================================== */
 .foot_col_izq {
-    justify-content: left;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
 }
-.foot_col_izq p {
-    text-align: left;
-    margin-left: 30px;
-    margin-bottom: 5px;
-    font-size: 20px;
-}
-
 #foot_col_izq_img {
     height: 80px;
-    justify-content: left;
-    margin-top: 10px;
-    margin-left: 30px;
-}
-
-#foot_col_izq_iconos{
-    height: 1px;
-}
-
-.foot_col_centro_izq {
-    text-align: left;
-    margin-left: 20px;
-}
-
-#foot_col_centro_izq_h1 {
-    font-size: 30px;
     margin-bottom: 10px;
-    margin-left: 23px;
+}
+.foot_col_izq p {
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+/* Iconos redes sociales */
+.foot_col_izq_iconos {
+    display: flex;
+    gap: 15px; /* Espacio entre iconos */
+}
+/* ==================================================
+   COLUMNA CENTRO IZQUIERDA
+   ================================================== */
+.foot_col_centro_izq {
+    display: flex;
+    flex-direction: column;
+}
+#foot_col_centro_izq_h1 {
+    font-size: 22px;
+    margin-bottom: 15px;
 }
 .foot_col_centro_izq_enlaces {
     text-decoration: none;
     color: white;
     font-size: 15px;
+    margin-bottom: 8px;
 }
 .foot_col_centro_izq_enlaces:hover {
     text-decoration: underline;
 }
-
+/* ==================================================
+   COLUMNA CENTRO DERECHA
+   ================================================== */
 .foot_col_centro_der {
-    text-align: left;
-    margin-left: 20px;
+    display: flex;
+    flex-direction: column;
 }
-
 #foot_col_centro_der_h1 {
-    font-size: 30px;
-    margin-bottom: 10px;
-    margin-left: 23px;
+    font-size: 22px;
+    margin-bottom: 15px;
 }
-
 .foot_col_centro_der_enlaces {
     text-decoration: none;
     color: white;
     font-size: 15px;
+    margin-bottom: 8px;
 }
 .foot_col_centro_der_enlaces:hover {
     text-decoration: underline;
 }
-
-.foot_col_der{
-    text-align: left;
-    margin-left: 20px;
+/* ==================================================
+   COLUMNA DERECHA (CONTACTO)
+   ================================================== */
+.foot_col_der {
+    display: flex;
+    flex-direction: column;
 }
-
 #foot_col_der_h1 {
-    font-size: 30px;
-    margin-bottom: 10px;
-    margin-left: 23px;
+    font-size: 22px;
+    margin-bottom: 15px;
 }
-
 .foot_col_der_contacto {
-    text-decoration: none;
-    color: white;
     font-size: 15px;
+    margin-bottom: 8px;
+}
+@media (max-width: 768px) {
+    footer {
+        text-align: center;
+        align-items: center;
+    }
+
+    .foot_col_izq,
+    .foot_col_centro_izq,
+    .foot_col_centro_der,
+    .foot_col_der {
+        align-items: center;
+        margin-bottom: 20px;
+    }
 }

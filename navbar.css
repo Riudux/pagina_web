@@ -4,52 +4,45 @@
     position: fixed; /* Fijar el navbar en la parte superior */
     width: 100%; /* Ancho completo */
     height: 75px; /* Altura del navbar */
-    padding: 14px 0; /* Espaciado arriba y abajo */
     align-items: center; /* Alinear los elementos verticalmente al centro */
     justify-content: space-between; /* Espacio entre los elementos */
-    overflow: hidden;/* Hace que los botones se escondan detras del logo */
     top: 0; /* Posición superior */
     box-shadow: 0 10px 20px rgba(0,0,0,.08); /* Sombra debajo del navbar */
+    z-index: 1000; /* Asegurar que el navbar esté por encima de otros elementos */
 }
 
 .logo {
-    margin-left: 20px; /* Espacio a la izquierda del logo */
-    margin-right: 20px; /* Espacio a la derecha del logo */
+    height: 50px; /* Altura del logo */
 }
 
 .botones {
     display: flex; /* Usar flexbox para los botones */
     gap: 15px; /* Espacio entre los botones */
-    justify-content: right; /* Alinear los botones a la derecha */
-    margin-right: 20px; /* Espacio a la derecha del contenedor de botones */
-    white-space: nowrap; /* Evitar que los botones se envuelvan */
+    align-items: center; /* Alinear los botones verticalmente al centro */
 }
 
 .botones_nav {
     text-decoration: none; /* Quitar subrayado */
-    display: flex; /* Para que tome el padding */
     color: #3498db; 
     font-weight: bold; /* Texto en negrita */
     border: 2px solid #3498db;
     background-color: transparent; /* Fondo transparente */
-    padding: 10px 20px; /* Espacio interno para que se vea la forma */
+    padding: 8px 18px; /* Espacio interno para que se vea la forma */
     border-radius: 50px; /* Hace los bordes curvos */
     transition: all 0.3s ease; /* Transición suave al cambiar */
 }
-
-.botones_nav:hover, .boton_register:hover {
-    color: white;
-    background-color: #3498db;
-    border-color: #2980b9;
-}
-
 .boton_register {
     text-decoration: none; /* Quitar subrayado */
     color: black; 
     font-weight: bold; /* Texto en negrita */
     border: 2px solid #83DDB7; 
     background-color: #83DDB7; 
-    padding: 10px 20px; /* Espacio interno para que se vea la forma */
+    padding: 8px 18px; /* Espacio interno para que se vea la forma */
     border-radius: 50px; /* Hace los bordes curvos */
     transition: all 0.3s ease; /* Transición suave al cambiar */
+}
+.botones_nav:hover, .boton_register:hover {
+    color: white;
+    background-color: #3498db;
+    border-color: #2980b9;
 }

@@ -1,112 +1,119 @@
-.top{
-    padding: 35px 0 0 0; 
-    width: 100%;
-    min-height: 65vh;
-    display: flex;
-    
+/* ==================================================
+   TÍTULOS PRINCIPALES
+   ================================================== */
+.fw-bold {
+    padding-top: 5%; /* Espacio superior para separar del navbar */
+    padding-left: 10%; /* Espacio izquierdo para mejor alineación visual */
+    display: flex; /* Activa flexbox */
+    flex-direction: column; /* Organiza el contenido en columna */
+    justify-content: left; /* Alinea el contenido hacia la izquierda */
+    width: 100%; /* Ocupa todo el ancho disponible */
 }
-
-.top-texto{
-    padding-top: 5%;
-    padding-left: 10%;
-    display: flex;
-    flex-direction: column;
-    justify-content: left;
-    width: 100%;
+/* ==================================================
+   SECCIÓN TOP (DISEÑO BASE - CELULAR)
+   ================================================== */
+.top {
+    min-height: 70vh; /* Ocupa al menos el 70% de la altura de la pantalla */
+    display: flex; /* Activa flexbox */
+    align-items: center; /* Centra verticalmente el contenido */
+    text-align: center; /* Centra el texto en pantallas pequeñas */
 }
-
-.boton_registro{
-    width: fit-content;
-    margin-top: 10px;
-    margin-left: 340px;
-    text-decoration: none; /* Quitar subrayado */
-    display: flex; /* Para que tome el padding */
-    color: black; 
-    border: 2px ; 
-    padding: 10px 20px; /* Espacio interno para que se vea la forma */
-    border-radius: 50px; /* Hace los bordes curvos */
-    transition: all 0.3s ease; /* Transición suave al cambiar */
-    cursor: pointer;
-    background-image: linear-gradient(180deg, #bffae1, #83DDB7);
-    font-weight: bold;
+.top h1 {
+    font-size: 1.8rem; /* Tamaño moderado para celular */
+    color: #143963; /* Color principal del proyecto */
 }
-
-.boton_registro:hover {
-    color: white;
-    background-color: #3498db;
-    border-color: #2980b9;
+.top p {
+    font-size: 1rem; /* Tamaño de texto base */
+    color: #555; /* Color gris suave para menor peso visual */
 }
-
-.top-imagen{
-    padding-top: 5%;
-    padding-right: 10%;
-    justify-content: right;
-    display: flex;
-    width: 100%;
-    
+.top-img {
+    max-width: 100%; /* Evita que la imagen se desborde */
+    margin-top: 30px; /* Separación respecto al texto cuando está debajo */
 }
-
-
-.cartel{
-    width: 100%;
-    display: flex;
-    align-items: flex-end;
-    min-height:70vh;
+/* ==================================================
+   SECCIÓN TOP - AJUSTE PARA LAPTOP
+   ================================================== */
+@media (min-width: 992px) { /* A partir de 992px (laptop) */
+    .top {
+        text-align: left; /* En pantallas grandes el texto se alinea a la izquierda */
+    }
+    .top h1 {
+        font-size: 2.8rem; /* Se aumenta el tamaño del título */
+    }
+    .top p {
+        font-size: 1.2rem; /* Se incrementa ligeramente el tamaño del párrafo */
+    }
+    .top-img {
+        margin-top: 0; /* Se elimina margen porque ya no está apilada */
+    }
 }
-
-.cartel-text{
-    display: flex;
-    justify-content: space-between;
+/* ==================================================
+   SECCIÓN CARTEL (TARJETAS INFORMATIVAS)
+   ================================================== */
+.cartel {
+    width: 100%; /* Ocupa todo el ancho */
+    display: flex; /* Organiza su contenido con flexbox */
+    align-items: flex-end; /* Alinea el contenido hacia la parte inferior */
+    min-height: 70vh; /* Altura mínima considerable */
 }
-.cartel-ritmo,  .cartel-oxigeno, .cartel-ia, .cartel-sos {
-    margin-left: 100px;
-    margin-right: 100px;
+.cartel-text {
+    display: flex; /* Distribuye las tarjetas en fila */
+    justify-content: space-between; /* Espacio uniforme entre tarjetas */
 }
-
+.cartel-ritmo, .cartel-oxigeno, .cartel-ia, .cartel-sos {
+    margin-left: 100px; /* Separación lateral izquierda */
+    margin-right: 100px; /* Separación lateral derecha */
+}
+/* ==================================================
+   CONTENEDOR PRINCIPAL DEL BLOQUE CARTEL
+   ================================================== */
 .cartel-card {
-    width: 100%;
-    height: flex;
-    background-image: linear-gradient(180deg, #c9f5f1, #7fb9de);
-    box-shadow: 0 0px 60px rgba(0, 0, 0, 0.2);
-    display: flex;
-    justify-content: center;
+    width: 100%; /* Ancho completo */
+    background-image: linear-gradient(180deg, #c9f5f1, #7fb9de); /* Fondo degradado */
+    box-shadow: 0 0px 60px rgba(0, 0, 0, 0.2); /* Sombra para profundidad */
+    display: flex; /* Flexbox para centrar contenido */
+    justify-content: center; /* Centrado horizontal */
 }
-
-.cartel-text img{
-    border-radius: 45%;
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
-    background-color: antiquewhite;
-    width: 60px;
-    height: 60px;
-    margin-left: 70px;
-    margin-top: 50px;
+/* ==================================================
+   IMÁGENES DE LAS TARJETAS
+   ================================================== */
+.cartel-text img {
+    border-radius: 45%; /* Bordes redondeados */
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1); /* Sombra ligera */
+    background-color: antiquewhite; /* Fondo base */
+    width: 60px; /* Tamaño fijo */
+    height: 60px; /* Tamaño fijo */
+    margin-left: 70px; /* Separación lateral */
+    margin-top: 50px; /* Separación superior */
 }
-
+/* ==================================================
+   TEXTO DE LAS TARJETAS
+   ================================================== */
 .cartel-ritmo p, .cartel-oxigeno p, .cartel-ia p, .cartel-sos p {
-    font-size: 18px;
-    text-align: center;
-    padding: 20px;
+    font-size: 18px; /* Tamaño de texto */
+    text-align: center; /* Centrado */
+    padding: 20px; /* Espacio interno */
     margin-left: 20px;
     margin-right: 20px;
     margin-top: 10px;
     margin-bottom: 50px;
 }
-
+/* ==================================================
+   ESTILO VISUAL DE CADA TARJETA
+   ================================================== */
 .cartel-ritmo, .cartel-oxigeno, .cartel-ia, .cartel-sos {
-    width: 22%;
-    background-color: white;
-    border-radius: 15px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    justify-content: center;
+    width: 22%; /* Ancho relativo */
+    background-color: white; /* Fondo blanco */
+    border-radius: 15px; /* Bordes redondeados */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra ligera */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Animación suave */
     margin-top: 40px;
     margin-bottom: 50px;
 }
-
+/* ==================================================
+   EFECTO HOVER EN TARJETAS
+   ================================================== */
 .cartel-ritmo:hover, .cartel-oxigeno:hover, .cartel-ia:hover, .cartel-sos:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    transform: translateY(-10px); /* Eleva ligeramente la tarjeta */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Aumenta la sombra */
 }
-
-
-
