@@ -6,10 +6,21 @@
     <link rel="stylesheet" href="acercade.css">
     <link rel="stylesheet" href="body.css">
     <link rel="stylesheet" href="navbar.css">
-</head>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+</head> 
 <body>
-    <section class="navbar">
+    <nav class="navbar">
         <a href="index.html"><img class="logo" src="imagenes/logo_nav.png" alt="Logo nav" height="50px"></a>     
+        <input type="checkbox" id="menu-toggle">
+
+        <label for="menu_toggle" class="hamburguesa">
+            <span></span>
+            <span></span>
+            <span></span>
+        </label>
+        
         <div class="botones">
             <a href="index.html" class = "botones_nav">Inicio</a>
             <a href="acercadee.html" class = "botones_nav">Acerca de</a>
@@ -20,14 +31,21 @@
         </div>
         
 
+    </nav>
+    <section class="container text py-5">
+        <div class="row align-items-center">
+            <div class="card-text">
+                <div class="col-12 col-lg-6 text-center">
+                    <div class="fw-bold">
+                        <h2>Acerca de Nosotros</h2>
+                    </div>
+                    <p><strong>Vital Connection</strong> es una plataforma diseñada para <br>unir la salud con la innovación tecnológica.</p>
+                    <p>Nuestra misión es permitir que cada persona tenga acceso a sus datos biométricos <br>de manera simple y segura, facilitando la prevención médica.</p>
+                    <a href="contactos.html" class="btn">Ver Contacto</a>
+                </div>    
+            </div>
+        </div>
     </section>
-    <div class="card">
-        <div style="font-size: 40px;"></div>
-        <h2>Acerca de Nosotros</h2>
-        <p><strong>Vital Connection</strong> es una plataforma diseñada para unir la salud con la innovación tecnológica.</p>
-        <p>Nuestra misión es permitir que cada persona tenga acceso a sus datos biométricos de manera simple y segura, facilitando la prevención médica.</p>
-        <a href="contactos.html" class="btn">Ver Contacto</a>
-    </div>
     <footer>
         <div class="foot_col_izq" izquierda>
             <img id="foot_col_izq_img" src="imagenes/logo_nav.png" alt="Logo nav">

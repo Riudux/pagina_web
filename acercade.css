@@ -1,24 +1,52 @@
 /* Tarjeta principal */
-.card {
+
+.text {
+    display: flex; /* Activa flexbox */
+    justify-content: center; /* Centra horizontalmente la tarjeta */
+    align-items: center; /* Centra verticalmente la tarjeta */
+    min-height: 80vh; /* Asegura que el contenedor ocupe al menos el 80% de la altura de la pantalla */
+}
+.card-text {
     background: var(--blanco-cristal);
     backdrop-filter: blur(10px);
-    border-radius: 25px;
     padding: 40px;
     box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-    max-width: 450px;
-    width: 90%;
-    text-align: center;
+    max-width: flex; /* Permite que la tarjeta se ajuste al contenido */
+    width: flex;
     border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 15%;
+    min-height: flex; /* Permite que la tarjeta se ajuste al contenido */
+    display: flex; /* Activa flexbox */
+    align-items: center; /* Centra verticalmente el contenido */
+    text-align: center; /* Centra el texto en pantallas pequeñas */
+}
+@media (min-width: 992px) { /* A partir de 992px (laptop) */
+
+    .card-text {
+        text-align: center; /* En pantallas grandes el texto se alinea a la izquierda */
+        align-items: center; /* Centra verticalmente el contenido */
+        justify-content: center; /* Centra horizontalmente el contenido */
+    }
+    .card-text h2 {
+        font-size: 2.8rem; /* Se aumenta el tamaño del título */
+        /* Le quitamos los <br> cuando se expanda */ 
+    }
+    .card-text br {
+        display: none; /* Oculta los saltos de línea en pantallas grandes */
+    }
+    .card-text p {
+        font-size: 1.2rem; /* Se incrementa ligeramente el tamaño del párrafo */
+    }
+
 }
 
-h2 {
+.fw-bold {
     color: var(--azul-oscuro);
-    margin-bottom: 20px;
+    text-align: center;
 }
 
-p {
+.card-text p {
     color: #444;
-    line-height: 1.6;
 }
 
 /* Botón de acción */

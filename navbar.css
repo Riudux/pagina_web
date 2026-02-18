@@ -10,39 +10,78 @@
     box-shadow: 0 10px 20px rgba(0,0,0,.08); /* Sombra debajo del navbar */
     z-index: 1000; /* Asegurar que el navbar esté por encima de otros elementos */
 }
-
 .logo {
     height: 50px; /* Altura del logo */
 }
-
 .botones {
     display: flex; /* Usar flexbox para los botones */
     gap: 15px; /* Espacio entre los botones */
     align-items: center; /* Alinear los botones verticalmente al centro */
 }
-
 .botones_nav {
     text-decoration: none; /* Quitar subrayado */
-    color: #3498db; 
+    color: rgb(193, 253, 255); /* Color del texto */
     font-weight: bold; /* Texto en negrita */
-    border: 2px solid #3498db;
     background-color: transparent; /* Fondo transparente */
     padding: 8px 18px; /* Espacio interno para que se vea la forma */
-    border-radius: 50px; /* Hace los bordes curvos */
     transition: all 0.3s ease; /* Transición suave al cambiar */
 }
 .boton_register {
     text-decoration: none; /* Quitar subrayado */
-    color: black; 
+    color: rgb(193, 253, 255); /* Color del texto */
     font-weight: bold; /* Texto en negrita */
-    border: 2px solid #83DDB7; 
-    background-color: #83DDB7; 
     padding: 8px 18px; /* Espacio interno para que se vea la forma */
-    border-radius: 50px; /* Hace los bordes curvos */
     transition: all 0.3s ease; /* Transición suave al cambiar */
 }
 .botones_nav:hover, .boton_register:hover {
-    color: white;
-    background-color: #3498db;
-    border-color: #2980b9;
+    color: rgb(240, 249, 249);
+    text-decoration: underline; /* Subrayar al pasar el mouse */
+}
+#menu-toggle {
+    display: none;
+}
+
+.hamburguesa {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 5px;
+}
+
+.hamburguesa span {
+    width: 25px;
+    height: 3px;
+    background: white;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+@media (max-width: 992px) {
+
+    .hamburguesa {
+        display: flex;
+    }
+
+    .botones {
+        position: absolute;
+        top: 75px;
+        left: 0;
+        width: 100%;
+        background-color: #143963;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+
+        height: 0;
+        overflow: hidden;
+        transition: height 0.4s ease;
+    }
+
+    /* ESTE ES EL QUE ABRE EL MENÚ */
+    #menu-toggle:checked ~ .botones {
+        height: 320px; /* ajusta si tienes más botones */
+        padding: 20px 0;
+    }
 }
