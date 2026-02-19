@@ -1,42 +1,54 @@
+/* =========================
+   NAVBAR BASE
+   ========================= */
+
 .navbar {
-    background-color: #143963; /* Color de fondo del navbar */ 
-    display: flex; /* Usar flexbox para el diseño */
-    position: fixed; /* Fijar el navbar en la parte superior */
-    width: 100%; /* Ancho completo */
-    height: 75px; /* Altura del navbar */
-    align-items: center; /* Alinear los elementos verticalmente al centro */
-    justify-content: space-between; /* Espacio entre los elementos */
-    top: 0; /* Posición superior */
-    box-shadow: 0 10px 20px rgba(0,0,0,.08); /* Sombra debajo del navbar */
-    z-index: 1000; /* Asegurar que el navbar esté por encima de otros elementos */
+    background-color: #143963;
+    display: flex;
+    position: fixed;
+    width: 100%;
+    height: 75px;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 30px;
+    top: 0;
+    box-shadow: 0 10px 20px rgba(0,0,0,.08);
+    z-index: 1000;
 }
+
 .logo {
-    height: 50px; /* Altura del logo */
+    height: 50px;
 }
+
+/* =========================
+   MENÚ DESKTOP
+   ========================= */
+
 .botones {
-    display: flex; /* Usar flexbox para los botones */
-    gap: 15px; /* Espacio entre los botones */
-    align-items: center; /* Alinear los botones verticalmente al centro */
+    display: flex;
+    gap: 15px;
+    align-items: center;
 }
-.botones_nav {
-    text-decoration: none; /* Quitar subrayado */
-    color: rgb(193, 253, 255); /* Color del texto */
-    font-weight: bold; /* Texto en negrita */
-    background-color: transparent; /* Fondo transparente */
-    padding: 8px 18px; /* Espacio interno para que se vea la forma */
-    transition: all 0.3s ease; /* Transición suave al cambiar */
-}
+
+.botones_nav,
 .boton_register {
-    text-decoration: none; /* Quitar subrayado */
-    color: rgb(193, 253, 255); /* Color del texto */
-    font-weight: bold; /* Texto en negrita */
-    padding: 8px 18px; /* Espacio interno para que se vea la forma */
-    transition: all 0.3s ease; /* Transición suave al cambiar */
+    text-decoration: none;
+    color: rgb(193, 253, 255);
+    font-weight: bold;
+    padding: 8px 18px;
+    transition: all 0.3s ease;
 }
-.botones_nav:hover, .boton_register:hover {
+
+.botones_nav:hover,
+.boton_register:hover {
     color: rgb(240, 249, 249);
-    text-decoration: underline; /* Subrayar al pasar el mouse */
+    text-decoration: underline;
 }
+
+/* =========================
+   HAMBURGUESA
+   ========================= */
+
 #menu-toggle {
     display: none;
 }
@@ -56,6 +68,10 @@
     transition: 0.3s;
 }
 
+/* =========================
+   RESPONSIVE
+   ========================= */
+
 @media (max-width: 992px) {
 
     .hamburguesa {
@@ -69,19 +85,38 @@
         width: 100%;
         background-color: #143963;
 
-        display: flex;
         flex-direction: column;
         align-items: center;
-        gap: 20px;
+        gap: 25px;
 
-        height: 0;
+        max-height: 0;
         overflow: hidden;
-        transition: height 0.4s ease;
+        transition: max-height 0.4s ease;
+        padding: 0;
     }
 
-    /* ESTE ES EL QUE ABRE EL MENÚ */
     #menu-toggle:checked ~ .botones {
-        height: 320px; /* ajusta si tienes más botones */
+        max-height: 500px;
         padding: 20px 0;
+    }
+
+    .botones_nav,
+    .boton_register {
+        width: 100%;
+        text-align: center;
+    }
+
+    /* Animación X */
+
+    #menu-toggle:checked + .hamburguesa span:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+    }
+
+    #menu-toggle:checked + .hamburguesa span:nth-child(2) {
+        opacity: 0;
+    }
+
+    #menu-toggle:checked + .hamburguesa span:nth-child(3) {
+        transform: rotate(-45deg) translate(5px, -5px);
     }
 }

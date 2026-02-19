@@ -23,108 +23,83 @@ body {
     display: flex; /* Flexbox para organizar layout vertical */
     flex-direction: column; /* Navbar arriba, contenido centro, footer abajo */
 }
-/* ==================================================
-   FOOTER - CONTENEDOR PRINCIPAL
-   ================================================== */
+/* =========================
+   FOOTER
+   ========================= */
+
 footer {
-    background-color: #143963; /* Color institucional */
-    color: white; /* Texto blanco */
-    display: flex; /* Organiza columnas en fila */
-    justify-content: space-around; /* Distribuye columnas uniformemente */
-    flex-wrap: wrap; /* Permite que bajen en pantallas pequeñas */
-    padding: 40px 20px; /* Espaciado interno */
-    margin-top: auto; /* Empuja el footer hacia abajo si hay poco contenido */
-}
-footer p {
-    margin: 0; /* Elimina márgenes por defecto */
-}
-/* ==================================================
-   COLUMNA IZQUIERDA
-   ================================================== */
-.foot_col_izq {
+    background-color: #143963;
+    color: white;
     display: flex;
-    flex-direction: column;
-    align-items: flex-start;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding: 50px 30px;
+    margin-top: auto;
 }
-#foot_col_izq_img {
-    height: 80px;
-    margin-bottom: 10px;
+
+footer ul {
+    list-style: none;
+    padding: 0;
 }
-.foot_col_izq p {
-    font-size: 18px;
-    margin-bottom: 15px;
+
+footer li {
+    margin-bottom: 8px;
 }
-/* Iconos redes sociales */
-.foot_col_izq_iconos {
-    display: flex;
-    gap: 15px; /* Espacio entre iconos */
-}
-/* ==================================================
-   COLUMNA CENTRO IZQUIERDA
-   ================================================== */
-.foot_col_centro_izq {
-    display: flex;
-    flex-direction: column;
-}
-#foot_col_centro_izq_h1 {
-    font-size: 22px;
-    margin-bottom: 15px;
-}
-.foot_col_centro_izq_enlaces {
+
+footer a {
     text-decoration: none;
     color: white;
     font-size: 15px;
-    margin-bottom: 8px;
 }
-.foot_col_centro_izq_enlaces:hover {
+
+footer a:hover {
     text-decoration: underline;
 }
-/* ==================================================
-   COLUMNA CENTRO DERECHA
-   ================================================== */
-.foot_col_centro_der {
-    display: flex;
-    flex-direction: column;
-}
-#foot_col_centro_der_h1 {
-    font-size: 22px;
-    margin-bottom: 15px;
-}
-.foot_col_centro_der_enlaces {
-    text-decoration: none;
-    color: white;
-    font-size: 15px;
-    margin-bottom: 8px;
-}
-.foot_col_centro_der_enlaces:hover {
-    text-decoration: underline;
-}
-/* ==================================================
-   COLUMNA DERECHA (CONTACTO)
-   ================================================== */
+
+/* Columnas */
+.foot_col_izq,
+.foot_col_centro_izq,
+.foot_col_centro_der,
 .foot_col_der {
     display: flex;
     flex-direction: column;
+    margin-bottom: 20px;
 }
-#foot_col_der_h1 {
-    font-size: 22px;
+
+#foot_col_izq_img {
+    height: 80px;
+    width: auto;
+    max-width: 100%;
+    object-fit: contain;
     margin-bottom: 15px;
 }
-.foot_col_der_contacto {
-    font-size: 15px;
-    margin-bottom: 8px;
-}
+
+
+/* Responsive */
 @media (max-width: 768px) {
+
     footer {
-        text-align: center;
+        flex-direction: column;
         align-items: center;
+        text-align: center;
     }
+    footer * {
+        font-size: 0.8em;
+    }
+
 
     .foot_col_izq,
     .foot_col_centro_izq,
     .foot_col_centro_der,
     .foot_col_der {
         align-items: center;
-        margin-bottom: 20px;
     }
 }
+
+@media (max-width: 768px) {
+    #foot_col_izq_img {
+        height: 60px;
+    }
+}
+
+
