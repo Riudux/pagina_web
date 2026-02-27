@@ -43,22 +43,19 @@
             <div class="login-form">
                 <h2>Iniciar Sesión</h2>
 
-                <div class="input-group">
-                    <input type="email" placeholder="Correo electrónico">
-                </div>
+                <form action="login.php" method="POST">
 
-                <div class="input-group">
-                    <input type="password" placeholder="Contraseña">
-                </div>
+                    <div class="input-group">
+                        <input type="email" name="email" placeholder="Correo electrónico" required>
+                    </div>
 
-                <div>
-                    <label class="checkbox">
-                        <input type="checkbox"> Recuérdame
-                    </label>
-                </div>
+                    <div class="input-group">
+                        <input type="password" name="password" placeholder="Contraseña" required>
+                    </div>
 
-                <button class="btn-login" >Iniciar Sesión</button>
+                    <button class="btn-login" type="submit">Iniciar Sesión</button>
 
+                </form>
                 <p class="login-link">
                     ¿No tienes cuenta? <a href="register.html">Regístrate</a>
                 </p> <br>
