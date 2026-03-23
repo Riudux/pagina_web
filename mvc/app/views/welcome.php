@@ -5,10 +5,13 @@
         $email = $_SESSION['email'];
         $elide = $_SESSION['id_usuario'];
         $lacontra = $_SESSION['password'];
+        $idrol = $_SESSION['id_rol'];
+
     }else {
-        header("Location : index.html");
+        header("Location : login.html");
         exit();
     }
+
 ?>
 
 
@@ -73,8 +76,16 @@
         <p>ID de usuario: <?php echo $elide ?></p>
         <p>Usuario: <?php echo $username; ?></p>
         <p>Correo: <?php echo $email; ?></p>
-        <p>Contraseña: <?php echo $lacontra; ?></p><br>
-        <a href="logout.php">Cerrar Sesión</a>
+        <p>Contraseña: <?php echo $lacontra; ?></p>
+        <p>ID Rol: <?php echo $idrol; ?> Eres: 
+        <?php 
+        if ($idrol == 1){ 
+            echo "Administrador"; 
+            }else { 
+                echo "Usuario"; 
+            } 
+            ?></p>
+        <a href="../controllers/usuarios/logout.php">Cerrar Sesión</a>
 
         <!-- jQuery -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>

@@ -19,9 +19,11 @@
         $_SESSION['username'] = $username;
         $_SESSION['email'] = $row['email'];
         $_SESSION['password'] = $row['password'];
-        header('Location: welcome.php');
+        $_SESSION['id_rol'] = $row['id_rol'];
+
+        header('Location: ../../views/welcome.php');
     }else{
-        echo "nicio de sesion fallida. <a href='index.html'> Intentar De nuevo</a>";
+        echo "inicio de sesion fallida. <a href='../../views/login.html'> Intentar De nuevo</a>";
     }
     $conn->close();
 
