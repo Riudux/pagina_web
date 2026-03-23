@@ -5,7 +5,7 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Title Page</title>
+        <title>Register</title>
 
         <!-- Bootstrap CSS -->
         <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
@@ -23,15 +23,15 @@
 
         <form action = "../controllers/usuarios/register.php" method = "post">
             <label for="username">
-                Usuario: <input type="text" name="username">
+                Usuario: <input type="text" name="username" required>
             </label>
             <br><br>
             <label for="email">
-                email: <input type="text" name="email">
+                email: <input type="text" name="email" required>
             </label>
             <br><br>
             <label for="password">
-                Contraseña: <input type="password" name="password">
+                Contraseña: <input type="password" name="password" required>
             </label>            
             <br><br>
             <button type="submit">
