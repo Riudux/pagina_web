@@ -29,7 +29,7 @@
         <table id="biometricosTable" border="1">
             <thead>
                 <tr>
-                    <th>ID</th>
+                    <th>ID RB</th>
                     <th>ID Usuario</th>
                     <th>ID Dispositivo</th>
                     <th>Ritmo Cardiaco</th>
@@ -48,7 +48,7 @@
         <div id="modalEditar" style="display:none";>
             <h3>Editar Registro Biometrico</h3>
             <form id="mostrarEditarBiometricos">
-                ID : <span id="editID"></span><br>
+                ID Registro Biometrico : <span id="editID"></span><br>
                 ID Usuario : <input type="text" id="editIdUsuario"><br>
                 ID Dispositivo : <input type="text" id="editIdDispositivo"><br>
                 Ritmo Cardiaco : <input type="text" id="editRitmoCardiaco"><br>
@@ -56,7 +56,7 @@
                 Temperatura : <input type="text" id="editTemperatura"><br>
                 Presion Sistolica : <input type="text" id="editPresionSistolica"><br>
                 Presion Diastolica : <input type="text" id="editPresionDiastolica"><br>
-                Fecha Registro : <input type="text" id="editFechaRegistro"><br>      
+                Fecha Registro : <span type="text" id="editFechaRegistro"></span><br>      
 
                 <button type="button" onclick="guardarEdicion()"> Guardar</button>
             </form>
@@ -133,7 +133,7 @@
                 document.getElementById('editTemperatura').value = temperatura;
                 document.getElementById('editPresionSistolica').value = presionSistolica;
                 document.getElementById('editPresionDiastolica').value = presionDiastolica;
-                document.getElementById('editFechaRegistro').value = fechaRegistro;
+                document.getElementById('editFechaRegistro').innerText = fechaRegistro;
 
                 var modal = document.getElementById('modalEditar').style.display = 'block';
             }
@@ -147,7 +147,6 @@
                 var temperatura = document.getElementById('editTemperatura').value
                 var presionSistolica = document.getElementById('editPresionSistolica').value
                 var presionDiastolica = document.getElementById('editPresionDiastolica').value
-                var fechaRegistro = document.getElementById('editFechaRegistro').value
                 $.ajax({
                     url: '../controllers/registros_biometricos/cargar_editar_biometricos.php',
                     type: 'POST',
@@ -160,10 +159,20 @@
                         editTemperatura: temperatura,
                         editPresionSistolica: presionSistolica,
                         editPresionDiastolica: presionDiastolica,
-                        editFechaRegistro: fechaRegistro
                     },
                     success:function(response){
-                        alert('Registro Biometrico actualizado correctamente');
+                        alert('Registro biometrico actualizado correctamente');;
+                        $.ajax({
+                            // este es el documento a cargar
+                            url: '../controllers/registros_biometricos/cargar_biometricos.php',
+                            // este es el metodo que va a tener, en este caso get es para agarrar los datos
+                            type: 'GET',
+                            success:function(response){
+                                // aqui se pone a quien se lo va agregar en este caso a quien tiene la id #dispositivostable y especificamente en la etiqueta tbody
+                                $('#biometricosTable tbody').html(response);
+                            }
+                        });
+                        document.getElementById('modalEditar').style.display = 'none';
                     }
                 });
             }
@@ -184,7 +193,18 @@
                         id: id
                     },
                     success:function(response){
-                        alert('Registro Biometrico eliminado correctamente');
+                        alert('Registro biometrico eliminado correctamente');
+                        $.ajax({
+                            // este es el documento a cargar
+                            url: '../controllers/registros_biometricos/cargar_biometricos.php',
+                            // este es el metodo que va a tener, en este caso get es para agarrar los datos
+                            type: 'GET',
+                            success:function(response){
+                                // aqui se pone a quien se lo va agregar en este caso a quien tiene la id #dispositivostable y especificamente en la etiqueta tbody
+                                $('#biometricosTable tbody').html(response);
+                            }
+                        });
+                        document.getElementById('modalEliminar').style.display = 'none';
                     }
                     
                 });

@@ -29,6 +29,7 @@
                             {$row['temperatura']}, 
                             {$row['presion_sistolica']}, 
                             {$row['presion_diastolica']},
+                            '{$row['fecha_registro']}'
                             )\">Editar</button>
 
                             <button onclick=\"mostrarEliminarBiometricos(

@@ -148,6 +148,17 @@
                     },
                     success:function(response){
                         alert('Dispositivo actualizado correctamente');
+                        $.ajax({
+                            // este es el documento a cargar
+                            url: '../controllers/dispositivos/cargar_dispositivos.php',
+                            // este es el metodo que va a tener, en este caso get es para agarrar los datos
+                            type: 'GET',
+                            success:function(response){
+                                // aqui se pone a quien se lo va agregar en este caso a quien tiene la id #dispositivostable y especificamente en la etiqueta tbody
+                                $('#dispositivosTable tbody').html(response);
+                            }
+                        });
+                        document.getElementById('modalEditar').style.display = 'none';
                     }
                 });
             }
@@ -168,7 +179,19 @@
                         id: id_dispositivo
                     },
                     success:function(response){
-                        alert('Dispositivo eliminado correctamente');                    
+                        alert('Dispositivo eliminado correctamente');
+                        $.ajax({
+                            // este es el documento a cargar
+                            url: '../controllers/dispositivos/cargar_dispositivos.php',
+                            // este es el metodo que va a tener, en este caso get es para agarrar los datos
+                            type: 'GET',
+                            success:function(response){
+                                // aqui se pone a quien se lo va agregar en este caso a quien tiene la id #dispositivostable y especificamente en la etiqueta tbody
+                                $('#dispositivosTable tbody').html(response);
+
+                            }
+                        });
+                        document.getElementById('modalEliminar').style.display = 'none';               
                     }
                     
                 });

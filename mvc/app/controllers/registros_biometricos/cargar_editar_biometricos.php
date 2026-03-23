@@ -12,7 +12,6 @@
         $temperatura = $_POST['editTemperatura'];
         $presion_sistolica = $_POST['editPresionSistolica'];
         $presion_diastolica = $_POST['editPresionDiastolica'];
-        $fecha_registro = $_POST['editFechaRegistro'];
 
         $sql = "UPDATE `registros_biometricos` SET 
         `id_usuario`='$id_usuario',
@@ -21,15 +20,9 @@
         `oxigeno`='$oxigeno',
         `temperatura`='$temperatura',
         `presion_sistolica`='$presion_sistolica',
-        `presion_diastolica`='$presion_diastolica',
-        `fecha_registro`='$fecha_registro'
+        `presion_diastolica`='$presion_diastolica'
         WHERE `id_registro` = '$id_registro'";
-
-        if ($conn->query($sql)) {
-            header("Refresh: 0; url=../../models/crud_biometricos.php"); 
-        } else {
-            echo "Error al actualizar el registro biometrico: ";
-        }
+        $result = $conn->query($sql);
     }
 
     $conn->close();

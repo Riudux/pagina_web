@@ -12,13 +12,14 @@
         $presion_sistolica = $_POST["presion_sistolica"];
         $presion_diastolica = $_POST["presion_diastolica"];
 
-        $sqlinsert = "INSERT INTO `registros_biometricos`(`id_usuario`, `id_dispositivo`, `ritmo_cardiaco`, `oxigeno`, `temperatura`, `presion_sistolica`, `presion_diastolica`) 
+        $sqlinsert = "INSERT INTO `registros_biometricos`(`id_usuario`, `id_dispositivos`, 
+        `ritmo_cardiaco`, `oxigeno`, `temperatura`, `presion_sistolica`, `presion_diastolica`) 
         VALUES 
-        ('$id_usuario','$id_dispositivo','$ritmo_cardiaco','$oxigeno','$temperatura','$presion_sistolica','$presion_diastolica')";
+        ('$id_usuario','$id_dispositivo','$ritmo_cardiaco','$oxigeno','$temperatura',
+        '$presion_sistolica','$presion_diastolica')";
 
         $result = $conn->query($sqlinsert);
 
-        // Recarga la página tras 5 segundos
         if ($result == TRUE) {
             header("Refresh: 0; url=../../models/crud_biometricos.php"); 
         } else {

@@ -14,13 +14,6 @@
         VALUES ('$nombre', '$modelo', '$numero_serie', $id_usuario)";
 
         $result = $conn->query($sqlinsert);
-
-        // Recarga la página tras 5 segundos
-        if ($result == TRUE) {
-            header("Refresh: 0; url=../../models/crud_dispositivos.php"); 
-        } else {
-            echo "Error al registrar el dispositivo: ";
-        }
     } 
     $conn->close();
 ?>

@@ -142,6 +142,17 @@
                     },
                     success:function(response){
                         alert('Usuario actualizado correctamente');
+                        $.ajax({
+                            // este es el documento a cargar
+                            url: '../controllers/usuarios/cargar_usuarios.php',
+                            // este es el metodo que va a tener, en este caso get es para agarrar los datos
+                            type: 'GET',
+                            success:function(response){
+                                // aqui se pone a quien se lo va agregar en este caso a quien tiene la id #usuariostable y especificamente en la etiqueta tbody
+                                $('#usuariosTable tbody').html(response);
+                            }
+                        });
+                        document.getElementById('modalEditar').style.display = 'none';                  
                     }
                 });
             }
@@ -162,7 +173,18 @@
                         id: id_usuario
                     },
                     success:function(response){
-                        alert('Usuario eliminado correctamente');                    
+                        alert('Usuario eliminado correctamente'); 
+                        $.ajax({
+                            // este es el documento a cargar
+                            url: '../controllers/usuarios/cargar_usuarios.php',
+                            // este es el metodo que va a tener, en este caso get es para agarrar los datos
+                            type: 'GET',
+                            success:function(response){
+                                // aqui se pone a quien se lo va agregar en este caso a quien tiene la id #usuariostable y especificamente en la etiqueta tbody
+                                $('#usuariosTable tbody').html(response);
+                            }
+                        });
+                        document.getElementById('modalEliminar').style.display = 'none'                   
                     }
                     
                 });

@@ -11,11 +11,7 @@
         $id_rol = $_POST['editIdRol'];
 
         $sql = "UPDATE usuarios SET id_usuario = '$id_usuario', username = '$username', email = '$email', fecha_registro = '$fecha_registro', id_rol = $id_rol WHERE id_usuario = $id_usuario";
-        if ($conn->query($sql)) {
-            echo "Usuario actualizado correctamente";
-        } else {
-            echo "Error al actualizar el usuario: ";
-        }
+        $result = $conn->query($sql);
     }
     
     $conn->close();

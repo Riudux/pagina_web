@@ -18,11 +18,7 @@
         `id_usuario`='$id_usuario',`fecha_registro`='$fecha_registro',
         `estado`='$estado' WHERE $id_dispositivos";
 
-        if ($conn->query($sql)) {
-            header("Refresh: 0; url=../../models/crud_dispositivos.php"); 
-        } else {
-            echo "Error al actualizar el usuario: ";
-        }
+        $result = $conn->query($sql);
     }
 
     $conn->close();
