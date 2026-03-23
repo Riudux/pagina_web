@@ -1,5 +1,6 @@
 <?php
-include("conexion.php");
+    session_start();
+    include("../../config/conexion.php");
 
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
@@ -11,11 +12,6 @@ include("conexion.php");
 
         $result = $conn->query($sqlinsert);
 
-        if ($result === TRUE) {
-            echo "Usuario registrado correctamente <a href='index.html'>Inicia sesion</a>."; 
-        } else {
-            echo "Error al registrar";
-        }
-    }
+    } 
     $conn->close();
 ?>
