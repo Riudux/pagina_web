@@ -11,7 +11,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $sqlinsert = "INSERT INTO usuarios (username, email, password) VALUES ('$username', '$email', '$password')";
 
     $result = $conn->query($sqlinsert);
-    header("Location: ../../views/login.html");
-    exit();
+    header("Location: ../../models/crud_usuarios.php");
 }
 $conn->close();
