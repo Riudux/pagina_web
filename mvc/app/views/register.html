@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registro</title>
+    <!-- Importación de CSS igual que el login.html -->
     <link rel="stylesheet" href="../assets/styles/body.css">
     <link rel="stylesheet" href="../assets/styles/navbar.css">
     <link rel="stylesheet" href="../assets/styles/register.css">
@@ -15,6 +16,7 @@
 </head>
 
 <body>
+    <!-- NavBar idéntica -->
     <nav class="navbar">
         <a href="../../public/index.html"><img class="logo" src="../assets/imagenes/logo_nav.png" alt="Logo nav"
                 height="50px"></a>
@@ -39,16 +41,21 @@
     </nav>
 
 
-    </nav>
+    <!-- ============================================== -->
+    <!-- TARJETA GRAFICA DE REGISTRO                     -->
+    <!-- ============================================== -->
     <div class="register">
         <div class="register-card">
 
             <div class="register-form">
                 <h2>Crear Cuenta</h2>
-
+                
+                <!-- IMPORTANTE: Dirigimos la información recolectada de manera "POST" a "usuarios/register.php" 
+                donde sí hay código del servidor listo para insertarlo en la Base. -->
                 <form action="../controllers/usuarios/register.php" method="POST">
 
                     <div class="input-group">
+                        <!-- Input requerido con name 'username'. Este será el $_POST['username'] en su destino -->
                         <input type="text" name="username" placeholder="Nombre Completo" required>
                     </div>
 
@@ -69,6 +76,7 @@
                 </p>
             </div>
 
+            <!-- Imagen representativa derecha -->
             <div class="register-image">
                 <img src="../assets/imagenes/logins_imagen.png">
             </div>
@@ -77,7 +85,9 @@
     </div>
 
 
-
+    <!-- ============================================== -->
+    <!-- FOOTER GENERAL DEL PROYECTO                      -->
+    <!-- ============================================== -->
     <footer>
         <div class="foot_col_izq" izquierda>
             <img id="foot_col_izq_img" src="../assets/imagenes/logo_nav.png" alt="Logo nav">

@@ -1,9 +1,14 @@
 <!DOCTYPE html>
+<!-- =========================================================================
+    ARCHIVO: contactos.html (TARJETA PÚBLICA DE REDES O COMUNICACIÓN)
+    PROPÓSITO: Información estática que simula un Call center o directorio base.
+========================================================================= -->
 <html lang="es">
 
 <head>
     <meta charset="UTF-8">
     <title>Contacto</title>
+    <!-- Ademas de las CSS base, se aplica 'contactos.css' dedicado para centrar la '.card' inferior de manera exclusiva. -->
     <link rel="stylesheet" href="../app/assets/styles/contactos.css">
     <link rel="stylesheet" href="../app/assets/styles/body.css">
     <link rel="stylesheet" href="../app/assets/styles/navbar.css">
@@ -13,6 +18,8 @@
 </head>
 
 <body>
+    
+    <!-- Navbar Pública Clásica Uniforme-->
     <nav class="navbar">
         <a href="index.html"><img class="logo" src="../app/assets/imagenes/logo_nav.png" alt="Logo nav"
                 height="50px"></a>
@@ -35,16 +42,27 @@
 
 
     </nav>
+    
+    <!-- ============================================== -->
+    <!-- COMPONENTE: TARJETA INDIVIDUAL                   -->
+    <!-- Tarjeta sencilla formateada en cajas de CSS para listar información. -->
+    <!-- ============================================== -->
     <div class="card">
         <h2>Contacto</h2>
+        
+        <!-- Uso de 'style' en-linea (inline-CSS), idealmente debe evitarse, pero funcional para alinear listas rápidamente -->
         <div style="text-align: left; margin: 20px 0;">
             <p><strong>Email:</strong> soporte@vitalconnection.com</p>
             <p><strong>Teléfono:</strong> +1 (800) 123-4567</p>
             <p><strong>Ubicación:</strong> Centro de Innovación, Torre Médica.</p>
         </div>
+        
         <p>¿Tienes dudas? Escríbenos y te responderemos en menos de 24 horas.</p>
+        <!-- Enlace en formato boton predeterminado por css base (`.btn`) -->
         <a href="acercadee.html" class="btn">Saber más de nosotros</a>
     </div>
+    
+    <!-- Footer general intacto  -->
     <footer>
         <div class="foot_col_izq" izquierda>
             <img id="foot_col_izq_img" src="../app/assets/imagenes/logo_nav.png" alt="Logo nav">

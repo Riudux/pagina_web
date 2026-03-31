@@ -1,22 +1,36 @@
 <!DOCTYPE html>
-<html>
+<!-- En HTML5 la etiqueta html es la raíz del documento, le falta declarar el idioma -->
+<html lang="es">
 
 <head>
+    <!-- Configuración para juego de caracteres Universal -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vital Connection</title>
+    
+    <!-- ============================================== -->
+    <!-- ESTILIZACIÓN E IMPORTACIÓN DE CSS (PUBLICO)      -->
+    <!-- ============================================== -->
+    <!-- Estas hojas de estilo (.css) provienen de la carpeta protegida "assets" dentro de "app". -->
+    <!-- Definen colores, márgenes, tipo de tarjetas, e imágenes de fondo desde reglas estáticas. -->
     <link rel="stylesheet" href="../app/assets/styles/index.css">
     <link rel="stylesheet" href="../app/assets/styles/navbar.css">
     <link rel="stylesheet" href="../app/assets/styles/body.css">
+    
+    <!-- También se reutiliza localmente Bootstrap (minificado) para no depender tanto de red externa. -->
     <link rel="stylesheet" href="../app/assets/styles/css/bootstrap.min.css">
+    <!-- Carga letras de Google Fonts. -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 
 </head>
 
 <body>
+    <!-- Barra de Navegación "Principal" / Pública -->
     <nav class="navbar">
         <a href="index.html"><img class="logo" src="../app/assets/imagenes/logo_nav.png" alt="Logo nav"
                 height="50px"></a>
+        
+        <!-- Checkbox invisible usado para desplegar la barra responsiva tipo hamburguesa  -->
         <input type="checkbox" id="menu-toggle">
 
         <label for="menu-toggle" class="hamburguesa">
@@ -25,21 +39,31 @@
             <span></span>
         </label>
 
+        <!-- Pestañas de la barra de navegación que conectan la "landing page" u otras informativas. -->
         <div class="botones">
             <a href="index.html" class="botones_nav">Inicio</a>
             <a href="acercadee.html" class="botones_nav">Acerca de</a>
             <a href="contactos.html" class="botones_nav">Contacto</a>
             <a href="Como.Funciona.html" class="botones_nav">Como funciona</a>
+            <!-- Aquí el ancla sí viaja a la subcarpeta resguardada de la app (Views) para Loguearse. -->
             <a href="../app/views/login.html" class="botones_nav">Ingresar</a>
             <a href="../app/views/register.html" class="boton_register">Registrarse</a>
         </div>
 
 
     </nav>
+    
+    <!-- ============================================== -->
+    <!-- SECCIÓN HERO O ENCABEZADO PRINCIPAL (LANDING)   -->
+    <!-- ============================================== -->
+    <!-- "py-5" es una clase utilitaria de Bootstrap que significa "Padding Y-axis 5" (Margen interno vertical grande) -->
     <section class="container top py-5">
+        <!-- "align-items-center" centra verticalmente los elementos de la Rejilla ROW -->
         <div class="row align-items-center">
 
+            <!-- Dividimos la pantalla a la mitad (6 columnas de 12 para Laptops "lg", todo el ancho de 12 para celulares) -->
             <div class="col-12 col-lg-6 text-center text-lg-start">
+                <!-- "fw-bold" = Font-weight: bold (Negritas). Letras grandes -->
                 <h1 class="fw-bold">
                     CONOCE VITAL CONNECTION <br>
                     TU SALUD CONECTADA <br>
@@ -51,12 +75,15 @@
                     Vital connection es una plataforma que te permite monitorear tus signos vitales 24/7.
                 </p>
 
+                <!-- Gran botón invitando al alta técnica ("Call To Action") . btn-success lo pinta verde típicamente. -->
                 <a href="../app/views/register.html" class="btn btn-success btn-lg mt-3">
                     Registrarse ahora
                 </a>
             </div>
 
+            <!-- Otra mitad de pantalla para la imagen decorativa gigante -->
             <div class="col-12 col-lg-6 text-center">
+                <!-- img-fluid permite que la foto se encoja proporcionalmente según el celular. -->
                 <img src="../app/assets/imagenes/logins_imagen.png" class="img-fluid top-img">
             </div>
 
@@ -64,7 +91,11 @@
     </section>
 
 
+    <!-- ============================================== -->
+    <!-- ZONA INFERIOR INFORMATIVA (CARTELES/ ICONOS)     -->
+    <!-- ============================================== -->
     <div class="cartel">
+        <!-- Tarjeta descriptiva estática con íconos vectoriales -->
         <div class="cartel-card">
             <div class="cartel-text">
                 <div class="cartel-ritmo">
@@ -79,6 +110,7 @@
                     <img src="../app/assets/imagenes/ia.png" alt="ia">
                     <p>IA Avanzada</p>
                 </div>
+                <!-- El botón de panico o advertencia -->
                 <div class="cartel-sos">
                     <img src="../app/assets/imagenes/sos.png" alt="sos">
                     <p>Alerta SOS</p>
@@ -88,8 +120,11 @@
 
     </div>
 
-
+    <!-- ============================================== -->
+    <!-- PIE DE PÁGINA REUTILIZABLE PUBLICO              -->
+    <!-- ============================================== -->
     <footer>
+        <!-- Columna 1 -->
         <div class="foot_col_izq" izquierda>
             <img id="foot_col_izq_img" src="../app/assets/imagenes/logo_nav.png" alt="Logo nav">
             <p>
@@ -104,10 +139,13 @@
                         width="20px"></a>
                 <a href="www.linkedin.com"><img src="../app/assets/imagenes/Linkedin.png" alt="LinkedIn"
                         width="20px"></a>
+                <!-- El logo de X o antiguo Twitter. -->
                 <a href="www.x.com"><img src="../app/assets/imagenes/x.png" alt="x" width="20px"></a>
 
             </div>
         </div>
+        
+        <!-- Columna 2: Navegación repetida en la base para comodidad -->
         <div class="foot_col_centro_izq" centro>
             <h1 id="foot_col_centro_izq_h1">Enlaces rápidos</h1>
             <div>
@@ -122,6 +160,8 @@
             </div>
 
         </div>
+        
+        <!-- Columna 3 -->
         <div class="foot_col_centro_der">
             <h1 id="foot_col_centro_der_h1">Legal</h1>
             <ul>
@@ -130,6 +170,8 @@
                 <li><a href="#" class="foot_col_centro_der_enlaces">Aviso legal</a></li>
             </ul>
         </div>
+        
+        <!-- Columna 4 -->
         <div class="foot_col_der" derecha>
             <h1 id="foot_col_der_h1">Contacto</h1>
             <ul>

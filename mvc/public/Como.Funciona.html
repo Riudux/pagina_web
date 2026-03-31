@@ -1,12 +1,19 @@
 <!DOCTYPE html>
+<!-- =========================================================================
+    ARCHIVO: Como.Funciona.html (Landing Adicional Técnica)
+    PROPÓSITO: Contiene tarjetas explicativas (Cards) separadas indicando beneficios y
+    pasos de como usar la aplicación con Iconos visuales. 
+========================================================================= -->
 <html lang="es">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Como funciona?</title>
+    
     <link rel="stylesheet" href="../app/assets/styles/body.css">
     <link rel="stylesheet" href="../app/assets/styles/navbar.css">
+    <!-- Adición requerida del "como_funciona.css" hecho a medida para moldear las tarjetas en gris -->
     <link rel="stylesheet" href="../app/assets/styles/como_funciona.css">
     <link rel="stylesheet" href="../app/assets/styles/css/bootstrap.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
@@ -34,6 +41,7 @@
         </div>
     </nav>
 
+    <!-- Zona de Título Superior centrado -->
     <section class="container top-section text-center">
         <div class="row">
             <div class="col-xs-12">
@@ -44,11 +52,16 @@
         </div>
     </section>
 
+    <!-- Envoltura de Cartas principales (wrapper) -->
     <div class="container cartel-wrapper text-center">
 
+        <!-- ============================================== -->
+        <!-- TARJETAS DE PASOS MAYORES (USANDO BOOTSTRAP GLYPHICONS) -->
+        <!-- ============================================== -->
         <div class="row steps-row">
             <div class="col-md-6 col-sm-6 col-xs-12">
                 <div class="como-card">
+                    <!-- Insignia vectorial (Barra de estaedisticas) traída de Bootstrap 3 -->
                     <span class="glyphicon glyphicon-stats"></span>
                     <h3>Paso 1: Monitoreo</h3>
                     <p>El sistema recopila datos como ritmo cardíaco, presión arterial y actividad física a través de
@@ -58,6 +71,7 @@
 
             <div class="col-md-6 col-sm-6 col-xs-12">
                 <div class="como-card">
+                    <!-- Insignia vectorial del Relámpago (Flash)  -->
                     <span class="glyphicon glyphicon-flash"></span>
                     <h3>Paso 2: Conexión</h3>
                     <p>Recibe notificaciones al instante y comparte tus datos con tu médico de confianza si es
@@ -72,7 +86,11 @@
             </div>
         </div>
 
+        <!-- ============================================== -->
+        <!-- MINI TARJETAS INFERIORES CON IMÁGENES EXTERNAS -->
+        <!-- ============================================== -->
         <div class="row benefits-row">
+            <!-- Columna tamaño 3 de pantalla, entran 4 en 12 cuadrantes para Laptops. -->
             <div class="col-md-3 col-sm-6 col-xs-12">
                 <div class="como-card benefit-card">
                     <img src="../app/assets/imagenes/ritmo.png" alt="24/7">
@@ -99,6 +117,7 @@
             </div>
         </div>
 
+        <!-- Boton de acción final gigante "Call To Action" final, apuntando a Register. -->
         <div class="row action-row">
             <div class="col-xs-12">
                 <a href="../app/views/register.html" class="btn btn-success btn-lg btn-registro">
@@ -164,6 +183,7 @@
         </div>
     </footer>
 
+    <!-- Bootstrap 3 Framework Scripts finales para compatibilidad del Menú responsivo móvil -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="../app/assets/styles/js/bootstrap.min.js"></script>
 </body>

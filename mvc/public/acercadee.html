@@ -1,9 +1,15 @@
 <!DOCTYPE html>
+<!-- =========================================================================
+    ARCHIVO: acercadee.html (PÁGINA INFORMATIVA ACERCA DE)
+    PROPÓSITO: Proporciona información descriptiva general sobre el proyecto "Vital Connection"
+    como misión, visión y equipo de desarrollo al público civil antes de inicio de sesión.
+========================================================================= -->
 <html lang="es">
 
 <head>
     <meta charset="UTF-8">
     <title>Acerca de</title>
+    <!-- Incluye las variaciones estéticas únicas guardadas en `acercade.css`, además de las bases -->
     <link rel="stylesheet" href="../app/assets/styles/acercade.css">
     <link rel="stylesheet" href="../app/assets/styles/body.css">
     <link rel="stylesheet" href="../app/assets/styles/navbar.css">
@@ -13,6 +19,7 @@
 </head>
 
 <body>
+    <!-- Barra general repetitida en las paginas html -->
     <nav class="navbar">
         <a href="index.html"><img class="logo" src="imagenes/logo_nav.png" alt="Logo nav" height="50px"></a>
         <input type="checkbox" id="menu-toggle">
@@ -34,22 +41,32 @@
 
 
     </nav>
+    
+    <!-- ============================================== -->
+    <!-- PÁRRAFOS O BLOQUE DESCRIPTIVOS                   -->
+    <!-- ============================================== -->
     <section class="container text py-5">
         <div class="row align-items-center">
             <div class="card-text">
+                <!-- Estructura de Centrado y márgenes de Bootstrap para acomodarnos de manera responsable por tamaño de equipo (celular vs pc) -->
                 <div class="col-12 col-lg-6 text-center">
                     <div class="fw-bold">
                         <h2>Acerca de Nosotros</h2>
                     </div>
+                    <!-- Etiqueta de salto de linea 'br' para acomodo estetico manual de texto parrafo -->
                     <p><strong>Vital Connection</strong> es una plataforma diseñada para <br>unir la salud con la
                         innovación tecnológica.</p>
                     <p>Nuestra misión es permitir que cada persona tenga acceso a sus datos biométricos <br>de manera
                         simple y segura, facilitando la prevención médica.</p>
+                        
+                    <!-- Botón de ancla que nos redirige a nuestra URL de contacto puro -->
                     <a href="contactos.html" class="btn">Ver Contacto</a>
                 </div>
             </div>
         </div>
     </section>
+    
+    <!-- Footer general intacto -->
     <footer>
         <div class="foot_col_izq" izquierda>
             <img id="foot_col_izq_img" src="../app/assets/imagenes/logo_nav.png" alt="Logo nav">

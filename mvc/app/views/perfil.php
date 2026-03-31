@@ -1,11 +1,24 @@
 <?php
+// =========================================================================
+// ARCHIVO: perfil.php (PÁGINA DEDICADA AL USUARIO AUTENTICADO)
+// PROPÓSITO: Similar al dashboard, pero enfocado puramente a una "Tarjeta" de identidad
+// informándote cosas que el sistema guarda sobre ti. 
+// =========================================================================
+
+// Levantamos bolsas de $_SESSION para verificar
 session_start();
+
+// Verifica integridad (Evita que el intruso ponga "perfil.php" directo)
 if (isset($_SESSION['email']) && isset($_SESSION['username'])) {
+    
+    // Obtenemos todos los datos desde el empaquetado inicial (login.php)
     $username = $_SESSION['username'];
     $email = $_SESSION['email'];
     $elide = $_SESSION['id_usuario'];
     $idrol = $_SESSION['id_rol'];
+
 } else {
+    // Te patea de vuelta hacia login en caso corrupto
     header("Location: ../app/views/login.html");
     exit();
 }
@@ -30,6 +43,8 @@ if (isset($_SESSION['email']) && isset($_SESSION['username'])) {
 </head>
 
 <body>
+    
+    <!-- BARRA NAVEGACIÓN PERFIL -->
     <nav class="navbar">
         <a href="dashboard.php"><img class="logo" src="../assets/imagenes/logo_nav.png" alt="Vital Connection Logo"></a>
         <input type="checkbox" id="menu-toggle">
@@ -43,35 +58,48 @@ if (isset($_SESSION['email']) && isset($_SESSION['username'])) {
         <div class="botones">
             <a href="dashboard.php" class="botones_nav"><span class="glyphicon glyphicon-home"></span> Panel</a>
             <a href="perfil.php" class="botones_nav active-nav"><span class="glyphicon glyphicon-user"></span> Mi Perfil</a>
-            <a href="../controllers/logout.php" class="boton_register btn-logout"><span class="glyphicon glyphicon-log-out"></span> Cerrar Sesión</a>
+            
+            <!-- Botón de desincorporación -->
+            <a href="../controllers/usuarios/logout.php" class="boton_register btn-logout"><span class="glyphicon glyphicon-log-out"></span> Cerrar Sesión</a>
         </div>
     </nav>
 
+    <!-- ÁREA DE INFORMACIÓN DEL PROPIO USUARIO -->
     <div class="container perfil-container">
         <div class="row">
+            <!-- offset se saltea columnas para dejar en blanco a la redonda y forzar el centrado -->
             <div class="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 col-xs-12">
 
+                <!-- Tarjeta contenedora principal  -->
                 <div class="perfil-card">
                     <div class="perfil-header">
                         <div class="perfil-avatar-wrapper">
                             <span class="glyphicon glyphicon-user avatar-icon"></span>
                         </div>
+                        <!-- Inyección: Muestra en grandote el Nombre en la parte superior del círculo -->
                         <h2><?php echo $username; ?></h2>
                     </div>
 
                     <div class="perfil-body">
                         <h3 class="section-title">Información de la Cuenta</h3>
+                        
                         <div class="row info-row">
+                            <!-- Filas subdivididas de la tarjeta -->
                             <div class="col-sm-6 info-box">
                                 <label>Nombre de Usuario:</label>
+                                <!-- Inyección del nombre -->
                                 <p><?php echo $username; ?></p>
                             </div>
+
                             <div class="col-sm-6 info-box">
                                 <label>Correo Electrónico:</label>
+                                <!-- Inyección del correo -->
                                 <p><?php echo $email; ?></p>
                             </div>
+
                             <div class="col-sm-6 info-box">
-                                <label>ID de Usuario:</label>
+                                <label>ID de Usuario (Token personal):</label>
+                                <!-- Inyectar identificador con el que funciona internamente el usuario -->
                                 <p><?php echo $elide; ?></p>
                             </div>
                         </div>
@@ -83,6 +111,10 @@ if (isset($_SESSION['email']) && isset($_SESSION['username'])) {
         </div>
     </div>
 
+
+    <!-- ============================================== -->
+    <!-- PIE ESTANDAR HTML                                -->
+    <!-- ============================================== -->
     <footer>
         <div class="foot_col_izq" izquierda>
             <img id="foot_col_izq_img" src="../assets/imagenes/logo_nav.png" alt="Logo nav">
